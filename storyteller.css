@@ -1,0 +1,33 @@
+/* CSS declarations go here */
+.element_menu{
+	float: left;
+	width: 200px;
+}
+
+.page_related_container{
+	float: left;
+}
+
+#page_editor{
+	width: 600px;
+	height: 440px;
+	background: white;
+	border: solid 1px;
+	z-index:-1;
+}
+
+#page_navigation{
+	clear: both;
+	height: 100px;
+	background: blue;
+}
+
+#scene_container{
+	position: absolute;
+	z-index: 0;
+}
+
+.character_image{
+	position: absolute; 
+	z-index: 1;
+}

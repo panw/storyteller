@@ -1,0 +1,72 @@
+<head>
+  <title>Story Teller</title>
+</head>
+
+<body>
+  {{renderPage}}
+</body>
+
+<template name="home">
+	This is the Home page
+	<div>{{loginButton}}</div>
+</template>
+
+<template name="author">
+	This is the author page
+</template>
+
+<template name="builder">
+	This is the builder page
+	<div id="save" class="button"> Save </div>
+		{{> element_menu}}
+		<div class="page_related_container">
+			<div id="page_editor">
+				<div id="scene_container"></div>
+			</div>
+
+			<div id="page_navigation">Page Navigation</div>
+		</div>
+	</div>
+</template>
+
+<template name="element_menu">
+	<div class="element_menu">
+		<div id="accordion">
+		  <h3>Scene</h3>
+		  <div id="scene_list">
+	  		{{#each scenes}}
+	  		<div><img width="42" src="{{src}}"/></div>
+	  		{{/each}}
+		  </div>
+		  <h3>Characters</h3>
+		  <div id="character_list">
+	  		{{#each characters}}
+	  		<div><img width="42" src="{{src}}"></div>
+	  		{{/each}}
+		  </div>
+		  <h3>Objects</h3>
+		  <div id="object_list"></div>
+		  <h3>Text</h3>
+		  <div id="text_list"></div>
+		</div>
+	</div>
+</template>
+<template name="login">
+	<form id="login-form" action="action">
+	  <div>
+	    <input type="email" id="login-email" />
+	    <input type="password" id="login-password" />
+	    <input type="submit" id="login-button" value="Sign in" />
+	 </div>
+	</form> 
+</template>
+
+<template name="registration">
+	<form id="registration-form" action="action">
+	  <div>
+	   <input type="email" id="account-email" />
+	   <input type="password" id="account-password" />
+	   <input type="submit" id="create-account" value="Create an Account" />
+	 </div>
+	</form>
+</template>
