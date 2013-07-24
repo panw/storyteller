@@ -1,0 +1,20 @@
+.elementMenu{
+	float: left;
+	width: 200px;
+	border: solid 1px;
+}
+
+.pageEditor{
+	float: left;
+	width: 600px;
+	height: 440px;
+	background: white;
+	border: solid 1px;
+	z-index:-1;
+}
+
+.pageNavigation{
+	clear: both;
+	height: 100px;
+	border: solid 1px;
+}

@@ -1,0 +1,21 @@
+<template name="elementMenu">
+	<div class="accordion">
+		<h3>Scenes</h3>
+		  <div id="scene_list">
+	  		{{#each scenes}}
+	  		<div><img width="42" src="{{src}}"/></div>
+	  		{{/each}}
+		  </div>
+		  <h3>Characters</h3>
+		  <div id="character_list">
+	  		{{#each characters}}
+	  		<div><img width="42" src="{{src}}"></div>
+	  		{{/each}}
+		  </div>
+		  <h3>Objects</h3>
+		  <div id="object_list"></div>
+		  <h3>Text</h3>
+		  <div id="text_list"></div>
+		</div>
+	</div>
+</template>
