@@ -1,7 +1,14 @@
 <head>
   <title>Story Teller</title>
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css" type="text/css" media="all" /> 
 </head>
 
 <body>
-  {{renderPage}}
+	<div class="header">
+		<div class="login">{{loginButtons}}</div>
+	</div>
+	<div class="main">
+		{{renderPage}}
+	</div>
+  
 </body>

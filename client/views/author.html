@@ -1,4 +1,12 @@
 <template name="author">
+	<div>
+		<ul>
+			{{#each bookDrafts}}
+			<li>{{title}}</li>
+			{{/each}}
+		</ul>
+	</div>
+
 	<div class="field">
 		<label>Title</label>
 		<input id="title" type="text" name="title" value=""/>

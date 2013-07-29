@@ -1,0 +1,21 @@
+.pageEditor{
+	z-index:-1;
+}
+.page{
+	width: 600px;
+	height: 440px;
+	background: white;
+	border: solid 1px;
+	z-index:0;
+}
+
+.draggable.pageElement{
+	position: absolute;
+	z-index:1;
+}
+
+.draggable.pageElement textarea{
+	border:10px;
+	background-color: transparent;
+}
+

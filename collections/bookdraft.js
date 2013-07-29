@@ -1,0 +1,1 @@
+BookDraft = new Meteor.Collection('bookDraft');
