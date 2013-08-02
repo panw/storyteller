@@ -3,15 +3,12 @@ function setBookSession(bookId, bookTitle){
 		id: bookId,
 		title: bookTitle
 	};
-	console.log("In Author.js: ");
-	console.log(newBook);
 	//console.log(EJSON.stringify(newBook));
 	Session.set("currentBook", newBook);
-	console.log(Session.get("currentBook"));
 }
 
-Template.author.bookdrafts = function(){
-	return BookDrafts.find();
+Template.author.books = function(){
+	return Books.find();
 };
 
 Template.author.rendered = function (){
@@ -28,7 +25,7 @@ Template.author.rendered = function (){
 
 Template.author.events({
 	"click .button#create": function(){
-		var newBookId = BookDrafts.insert({
+		var newBookId = Books.insert({
 			userId: Meteor.userId(),
 			title: $("#title").val(),
 		});
