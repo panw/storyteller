@@ -1,4 +1,7 @@
 Meteor.Router.add({
 	'/author'		: 'author',
-  '/builder'  : 'builder'
+  '/book/:story/builder'  : function(story){
+  	Session.set("currentStory", story);
+  	return 'builder';
+  }
 });

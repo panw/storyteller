@@ -1,7 +1,8 @@
 <template name="pageNavigation">
 	<span class="pages">
-		<a class="pageLink" href="#pageCover">Cover</a>
-		<a class="pageLink" href="#page1">1</a>
+		{{#each pages}}
+			<a class="pageLink" id="page{{number}}" href="#page{{number}}">{{number}}</a>
+		{{/each}}
 	</span>
 	<a id="addPage" href="">+ Page</a>
 </template>

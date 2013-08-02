@@ -69,12 +69,11 @@ Template.elementMenu.rendered = function(){
 		insertElementIntoPage(this, "textbox");
 	});
 
-
 };
 
 // Return collections based on image type
 Template.elementMenu.scenes = function () {
-  return Images.find({type: 'scene'});
+  return Images.find({type: "scene"});
 };
 
 Template.elementMenu.characters = function () {

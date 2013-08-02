@@ -1,5 +1,5 @@
 <template name="pageEditor">
-		<div class="page" id="pageCover">This is the cover</div>
-		<div class="page active" id="page1">This is Page 1</div>
-	
+	{{#each pages}}
+		<div class="page" id="page{{number}}"></div>
+	{{/each}}
 </template>

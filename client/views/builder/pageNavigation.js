@@ -1,11 +1,12 @@
-var counter = 2;
+var pageCount;
 
 // Function for showing and hiding pages
 function displayPage(pageId){
+  console.log(pageId);
   $(".page.active").hide();
   $(".page.active").removeClass("active");
-  $(pageId).show();
   $(pageId).addClass("active");
+  $(".page.active").show();
 }
 
 function changePage(){
@@ -15,19 +16,19 @@ function changePage(){
   }); 
 }
 Template.pageNavigation.rendered = function(){
-  $(".page").hide();
-  $(".active.page").show();
   changePage();
-
 };
-
+Template.pageNavigation.pages = function(){
+  pageCount = Pages.find().count();
+  console.log(pageCount);
+  return Pages.find();
+};
 Template.pageNavigation.events({
   "click #addPage": function(){
-    $("div.pageNavigation span.pages").append(" <a class='pageLink' href='#page"+counter+"'>"+counter+"</a>");
-    $(".pageEditor").append("<div class='page active' id='page"+counter+"'>This is Page"+counter+"</div>");
-    displayPage("#page"+counter);
-    counter++;
-    
+    $("div.pageNavigation span.pages").append(" <a class='pageLink' href='#page"+pageCount+"'>"+pageCount+"</a>");
+    $(".pageEditor").append("<div class='page active' id='page"+pageCount+"'></div>");
+    displayPage("#page"+pageCount);
+    pageCount++;
     changePage();
   }
 });
