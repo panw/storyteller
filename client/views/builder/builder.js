@@ -21,11 +21,22 @@ Template.builder.book = function(){
 };
 
 
-// Template.builder.events({
-// 	"click .button#saveBook": function(){
-// 		alert("Clicked");
-// 	}
-// });
+Template.builder.events({
+	"click .button#saveBook": function(){
+		var count = 1;
+		$(".active.page > .character").each(function(){
+ 			var character_id = this.id;
+ 			var character_left = this.style.left;
+ 			var character_top = this.style.top;
+ 			console.log("Character" + count);
+ 			console.log(character_id);
+ 			console.log(character_left);
+ 			console.log(character_top);
+ 			console.log("\n");
+ 			count++;
+ 		});
+	}
+});
 
 // Template.builder.events({
 // 	"click .button#saveBook": function(){
