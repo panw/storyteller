@@ -10,3 +10,8 @@ accounts-facebook
 accounts-password
 accounts-base
 ejson
+standard-app-packages
+HTML5-History-API
+jquery-ui
+page-js-ie-support
+router

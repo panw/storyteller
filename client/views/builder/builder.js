@@ -28,10 +28,14 @@ Template.builder.events({
  			var character_id = this.id;
  			var character_left = this.style.left;
  			var character_top = this.style.top;
+ 			var character_width = $(this).children().width();
+ 			var character_height = $(this).children().height();
  			console.log("Character" + count);
  			console.log(character_id);
  			console.log(character_left);
  			console.log(character_top);
+ 			console.log(character_width);
+ 			console.log(character_height);
  			console.log("\n");
  			count++;
  		});
