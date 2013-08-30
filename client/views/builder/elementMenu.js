@@ -47,7 +47,6 @@ function insertElementIntoPage(selectedElement, elementType){
 function makeRemovable(element){
 	var pageElement = element;
 	pageElement.addClass("removable");
-	
 }
 
 Template.elementMenu.rendered = function(){
@@ -62,6 +61,8 @@ Template.elementMenu.rendered = function(){
 	});
 
 	$(".pageElement.character").click(function(){
+		console.log("This");
+		console.log(this);
 		insertElementIntoPage(this, "character");
 	});
 

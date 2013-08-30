@@ -2,43 +2,64 @@ Template.builder.rendered = function (){
 	$(".button").button();
 };
 
-Template.builder.book = function(){
-	var book = Session.get("currentBook");
-	console.log("In builder.js");
-	console.log(Session.get("currentBook"));
-	if(Session.get("isNewBook")){
-		for (i=0; i<2; i++){
-			Pages.insert({
-				bookId: book.id,
-				number: i,
-				images: [],
-				text: []
-			});	
-		}
-		Session.set("isNewBook", false);
-	}
-	return book;
+Template.builder.bookTitle = function(){
+	console.log(Session.get("currentBookTitle"));
+	return Session.get("currentBookTitle");
 };
 
 
 Template.builder.events({
 	"click .button#saveBook": function(){
-		var count = 1;
-		$(".active.page > .character").each(function(){
- 			var character_id = this.id;
- 			var character_left = this.style.left;
- 			var character_top = this.style.top;
- 			var character_width = $(this).children().width();
- 			var character_height = $(this).children().height();
- 			console.log("Character" + count);
- 			console.log(character_id);
- 			console.log(character_left);
- 			console.log(character_top);
- 			console.log(character_width);
- 			console.log(character_height);
- 			console.log("\n");
- 			count++;
- 		});
+		var pageCount = 0;
+		var pages = new Array();
+
+		$(".page").each(function(){
+			console.log("Page" + pageCount);
+			var pageScene = $(this).css("background-image").replace('url(','').replace(')','');
+			console.log(pageScene);
+			var pageElements = $(this).children(".character");
+			var pageObjects = new Array();
+			pageElements.each(function(){
+	 			var character_id = this.id;
+	 			var character_src = $(this).children().children("img").attr("src");
+	 			var character_left = this.style.left;
+	 			var character_top = this.style.top;
+	 			var character_width = $(this).children().width() + "px";
+	 			var character_height = $(this).children().height() + "px";
+
+	 			var object = {
+	 				id: character_id,
+	 				src: character_src,
+	 				top: character_top,
+	 				left: character_left,
+	 				width: character_width,
+	 				height: character_height
+	 			};
+
+	 			pageObjects.push(object);
+
+	 			console.log(character_id);
+	 			console.log(character_src);
+	 			console.log(character_left);
+	 			console.log(character_top);
+	 			console.log(character_width);
+	 			console.log(character_height);
+	 			console.log("\n");
+			});
+			var page = {
+				number: pageCount,
+				scene: pageScene,
+				elements: pageObjects
+			};
+			pages.push(page);
+			pageCount++;
+		});
+		console.log(pages);
+		Books.update(
+		   { _id: Session.get("currentBookId") },
+		   { $set: { 'pages': pages }}
+		);
+		console.log("End of Save Function");
 	}
 });
 

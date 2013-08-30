@@ -19,9 +19,11 @@ Template.pageNavigation.rendered = function(){
   changePage();
 };
 Template.pageNavigation.pages = function(){
-  pageCount = Pages.find().count();
-  console.log(pageCount);
-  return Pages.find();
+  var currentBook = Books.findOne({_id: Session.get("currentBookId")});
+  // console.log(currentBook);
+  // console.log(currentBook.pages);
+  //return pageCount;
+  return currentBook.pages;
 };
 Template.pageNavigation.events({
   "click #addPage": function(){
