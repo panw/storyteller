@@ -4,5 +4,5 @@ Deps.autorun(function () {
 	if (Session.get("currentBookId") != null) {
 		Meteor.subscribe("currentBook", Session.get("currentBookId"));
 	};
-	
+	Meteor.subscribe("publications");
 });
