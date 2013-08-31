@@ -20,6 +20,8 @@ Template.pageNavigation.rendered = function(){
 };
 Template.pageNavigation.pages = function(){
   var currentBook = Books.findOne({_id: Session.get("currentBookId")});
+  pageCount = currentBook.pages.length;
+  console.log("Page Count: "+pageCount);
   // console.log(currentBook);
   // console.log(currentBook.pages);
   //return pageCount;
