@@ -60,6 +60,10 @@ Template.builder.events({
 		   { $set: { 'pages': pages }}
 		);
 		console.log("End of Save Function");
+	},
+
+	"click .button#publishBook": function(){
+		alert("Clicked Publish");
 	}
 });
 
