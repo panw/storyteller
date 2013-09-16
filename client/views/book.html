@@ -1,0 +1,16 @@
+<template name="book">
+	<div class="book">
+		{{currentPublication.title}}
+		{{#each currentPublication.book.pages}}
+			<div id="page{{number}}" class="published page" style="background-image: url({{scene}})">
+				{{#each elements}}
+					<div id="{{id}}" class="pageElement">
+						<img src="{{src}}" style="width:{{width}}; height:{{height}}; top:{{top}}; left:{{left}};"/>
+					</div>
+				{{/each}}
+			</div>
+		{{/each}}
+	</div>
+</template>
+
+

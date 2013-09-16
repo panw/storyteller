@@ -5,3 +5,5 @@ Meteor.publish("books", function(){ return Books.find({userId: this.userId}); })
 Meteor.publish("currentBook", function(bookId){	return Books.findOne({_id: bookId}); });
 
 Meteor.publish("publications", function(){ return Publications.find(); });
+
+Meteor.publish("currentPublication", function(publicationId){ return Publications.findOne({_id: publicationId}); })

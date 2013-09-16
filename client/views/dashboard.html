@@ -1,7 +1,7 @@
 <template name="dashboard">
 	<ul>
 		{{#each publications}}
-			<li>{{title}}</li>
+			<li><a class="publicationLink" id="{{_id}}" href="/book/{{title}}">{{title}}</a></li>
 		{{/each}}
 	</ul>
 	

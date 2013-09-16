@@ -5,4 +5,5 @@ Deps.autorun(function () {
 		Meteor.subscribe("currentBook", Session.get("currentBookId"));
 	};
 	Meteor.subscribe("publications");
+	Meteor.subscribe("currentPublication");
 });
