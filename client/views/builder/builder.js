@@ -18,12 +18,20 @@ function saveBook(){
 		var pageElements = $(this).children(".character");
 		var pageObjects = new Array();
 		pageElements.each(function(){
+			console.log("Parent", $(this).parent());
+			console.log("This", $(this));
  			var character_id = this.id;
  			var character_src = $(this).children().children("img").attr("src");
- 			var character_left = this.style.left;
- 			var character_top = this.style.top;
+ 			var character_left = $(this).position().left;
+ 			var character_top = $(this).position().top ;
  			var character_width = $(this).children().width() + "px";
  			var character_height = $(this).children().height() + "px";
+
+ 			console.log("top", character_top);
+ 			console.log("left", character_left);
+ 			console.log("width", character_width);
+ 			console.log("height", character_height);
+
 
  			var object = {
  				id: character_id,
